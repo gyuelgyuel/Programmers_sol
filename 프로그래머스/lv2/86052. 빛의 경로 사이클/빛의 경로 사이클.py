@@ -1,20 +1,8 @@
 def solution(grid):
     answer = []
-    ## generate start_point
-    start_point = []
-    visited = []
-    d_array = ['R','D','L','U']
     rows = len(grid)
     cols = len(grid[0])
-    for i in range(rows):
-        temp1 = []
-        for j in range(cols):
-            temp2 = []
-            for d in d_array:
-                start_point.append([i,j,d])
-                temp2.append(False)
-            temp1.append(temp2)
-        visited.append(temp1)
+    visited = [[[False for _ in range(4)] for _ in range(cols)] for _ in range(rows)]
     for i in range(rows):
         for j in range(cols):
             for k in range(4):
